@@ -22,6 +22,17 @@ This is my journey with computer graphics, including related courses, books, tut
 | Tiny Renderer                |             | 0%       |
 | GLSL-PathTracer              |             | 0%       |
 
+| Math                      | Description |
+| ------------------------- | ----------- |
+| Essence of Linear Algebra | 3Blue1Brown |
+| Differential equations    | 3Blue1Brown |
+
+| Courses                | Description |
+| ---------------------- | ----------- |
+| TU Wien Rendering      |             |
+| GAMES 101              |             |
+| Ray Tracing Essentials | NVIDIA      |
+
 ## Rendering
 
 ### Ray Tracing
