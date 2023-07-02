@@ -22,16 +22,17 @@ This is my journey with computer graphics, including related courses, books, tut
 | Tiny Renderer                |             | 0%       |
 | GLSL-PathTracer              |             | 0%       |
 
-| Math                      | Description |
-| ------------------------- | ----------- |
-| Essence of Linear Algebra | 3Blue1Brown |
-| Differential equations    | 3Blue1Brown |
+| Math                                                                                                  | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| [Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) | 3Blue1Brown: A free course offering the core concept of linear algebra with a visuals-first approach. |
+| Differential equations                                                                                | 3Blue1Brown                                                                                           |
 
-| Courses                | Description |
-| ---------------------- | ----------- |
-| TU Wien Rendering      |             |
-| GAMES 101              |             |
-| Ray Tracing Essentials | NVIDIA      |
+| Courses                                                          | Description                                                                                                                  |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| TU Wien Rendering                                                |                                                                                                                              |
+| GAMES 101                                                        |                                                                                                                              |
+| Ray Tracing Essentials                                           | NVIDIA                                                                                                                       |
+| [Introduction to Deep Learning](http://introtodeeplearning.com/) | MIT:An efficient and high-intensity bootcamp designed to teach you the fundamentals of deep learning as quickly as possible! |
 
 ## Rendering
 
