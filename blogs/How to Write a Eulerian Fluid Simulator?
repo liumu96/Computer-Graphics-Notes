@@ -1,0 +1,177 @@
+# How to Write a Eulerian Fluid Simulator?
+
+In this blog I’ll introduce the simplest method to implement a fluid simulation——Eulerian Method. First, I’ll give a simple introduction of the math background of fluid simulation, including the Navier-Stoke equation, the MAC grid . Then, I’ll introduce how the Eulerian method solve the equation and in this part I’ll give the presudo code as well. In the end, I’ll show my fluid simulation demos implemented by Javascript and c++.
+
+In this blog, I'll introduce the simplest method for implementing a fluid simulation—the Eulerian Method. First, I'll provide a brief overview of the mathematical background of fluid simulation, which includes the **`Navier-Stokes`** equation and the MAC grid. Then, I'll explain how the Eulerian method is used to solve these equations, and in this section, I'll provide **pseudocode** as well. Finally, I'll showcase my fluid simulation demos implemented in JavaScript and C++ separately.
+
+## Background
+
+- The **Navier-Stoke** Equation:
+  $$
+  \begin{align}
+  \frac{\partial \bold u}{\partial t} +(\nabla \cdot \bold u)\bold u + \frac{1}{\rho}\nabla p &= \nu \nabla^2\bold u + \bold g \\
+  \nabla \cdot \bold u &= 0
+  \end{align}
+  $$
+  The equation (1) is derived from the Newton’s second law:
+  $$
+  \bold a = \frac{1}{m}\sum_if_i \Longrightarrow\frac{d(m\bold v)}{dt} = \sum_if_i
+  $$
+  The equation (2) is also known as the incompressibility condition.
+- The **MAC** Grid
+  ![The two-dimensional MAC grid](./images//2d-mac.png)
+  The two-dimensional MAC grid
+  ![One cell from the three-dimensional MAC grid.](./images//3d-mac.png)
+  One cell from the three-dimensional MAC grid.
+  The staggered MAC grid is perfectly suited for handling **pressure and incompressibility**.
+  An implementation should use integer indices, thus a standard convention is needed:
+  $$
+  \begin{align}
+  p(i,j,k) = p_{i,j,k} \\
+  u(i,j,k) = u_{i-1/2,j,k} \\
+  v(i,j,k) = v_{i,j-1/2,k} \\
+  w(i,j,k) = w_{i,j,k-1/2} \\
+  \end{align}
+  $$
+  For an $nx×ny×nz$ grid, the pressure is stored in an $nx×ny×nz$ array, the u component in a $(nx+1)×ny×nz$ array, the v component in a $nx×(ny+1)×nz$ array, and the w component in a $nx×ny×(nz+1)$ array.
+- The Math Background: [Gradient & Divergence](https://blogs-liuxing.vercel.app/post/the-math-background-for-vector-calculus)
+
+## Simulation Algorithm
+
+- Splitting the Equation
+  We’ll splitting the incompressible fluid equation into three parts: the **advection** part, the **body forces** (gravity) part, and the **pressure/incompressibility** part. (Consider the fluid is **inviscid**)
+  $$
+  \begin{align}
+  \frac{Dq}{Dt} &= 0 \text{(advection)} \\
+  \frac{\partial \vec u}{\partial t} &= \vec g \text{(body forces)} \\
+  \frac{\partial \vec u}{\partial t} + \frac{1}{\rho}\Delta p &= 0 \text { such that } \nabla \cdot \vec u = 0. \text{pressure / incompressibility}
+  \end{align}
+  $$
+  The basic fluid simulation can be illustrated as the graph below:
+  ![Untitled](./images//eulerian-simulation.png)
+- Update Velocity
+  $$
+  ⁍
+  $$
+- Forcing Incompressibility
+  ✨ **Recall**
+  In this part, we need to solve the function below:
+
+  $$
+  \begin{align}
+  \frac{\partial \bold u}{\partial t} &= - \frac{1}{\rho}\nabla p  \\
+  \nabla \cdot \bold u &= 0
+  \end{align}
+  $$
+
+  The $project(\Delta t, \bold u)$
+
+  $$
+  \bold u^{n + 1} = \bold u - \Delta t \frac{1}{\rho}\nabla p
+  $$
+
+  The result satisfies incompressibility inside the fluid:
+
+  $$
+  \begin{align}
+  \nabla \cdot \bold u^{n+1} &= 0
+  \end{align}
+  $$
+
+  The **solid wall** boundary conditions:
+
+  $$
+  \begin{align}
+  \bold u^{n+1} \cdot \hat n  &= \bold u_{solid} \cdot \hat n \text{ at solid boundaries}
+  \end{align}
+  $$
+
+  The **free surface** boundary conditions:
+
+  $$
+  \begin{align}
+  p = 0 \text{ at free surfaces}
+  \end{align}
+  $$
+
+  ✨ Solution
+  Let’s look at **the Project Equation:**
+
+  $$
+  \bold u^{n + 1} = \bold u - \Delta t \frac{1}{\rho}\nabla p
+  $$
+
+  Using the **central difference** approximations
+
+  $$
+  \begin{align}
+  u_{i+1/2,j}^{n+1} = u_{i+1/2,j} - \Delta t \frac{1}{\rho}\frac{p_{i+1, j} - p_{i, j}}{\Delta x} \\
+  v_{i,j+1/2}^{n+1} = v_{i,j+1/2} - \Delta t \frac{1}{\rho}\frac{p_{i, j+1} - p_{i, j}}{\Delta x} \\
+  \end{align}
+  $$
+
+  and in three dimensions
+
+  $$
+  \begin{align}
+  u_{i+1/2,j,k}^{n+1} = u_{i+1/2,j,k} - \Delta t \frac{1}{\rho}\frac{p_{i+1,j,k} - p_{i, j,k}}{\Delta x} \\
+  v_{i,j+1/2,k}^{n+1} = v_{i,j+1/2,k} - \Delta t \frac{1}{\rho}\frac{p_{i,j+1,k} - p_{i, j,k}}{\Delta x} \\
+  w_{i,j,k+1/2}^{n+1} = w_{i,j,k+1/2} - \Delta t \frac{1}{\rho}\frac{p_{i,j,k+1} - p_{i, j,k}}{\Delta x} \\
+  \end{align}
+  $$
+
+  Look at **the divergence of velocity**, using the **central difference** approximations
+
+  $$
+  (\nabla \cdot \vec u)_{i,j} \approx \frac{u_{i+1/2,j} - u_{i-1/2,j}}{\Delta x} + \frac{v_{i,j+1/2} - v_{i,j-1/2}}{\Delta x}
+  $$
+
+  and in three dimensions
+
+  $$
+  (\nabla \cdot \vec u)_{i,j,k} \approx \frac{u_{i+1/2,j,k} - u_{i-1/2,j,k}}{\Delta x} + \frac{v_{i,j+1/2,k} - v_{i,j-1/2,k}}{\Delta x} + \frac{w_{i,j,k+1/2} - w_{i,j,k-1/2}}{\Delta x}
+  $$
+
+  **Combine** the two ingredients together, we can get the pressure equation:
+
+  $$
+  ⁍
+  $$
+
+  $$
+  \frac{\Delta t}{\rho}(\frac{6p_{i,j,k} - p_{i+1,j,k} - p_{i,j+1,k} - p_{i,j,k+1} - p_{i-1,j,k} - p_{i,j-1,k} - p_{i,j,k-1}}{\Delta x^2}) = -(\frac{u_{i+1/2,j,k} - u_{i-1/2,j,k}}{\Delta x} + \frac{v_{i,j+1/2,k} - v_{i,j-1/2,k}}{\Delta x} + \frac{w_{i,j,k+1/2} - w_{i,j,k-1/2}}{\Delta x})
+
+
+  $$
+
+  numerical approximations to the Poisson problem $\Delta t/\rho\nabla\cdot\nabla p = -\nabla \cdot \bold u$. Here we adopt **`Gause-Seidel`** to solve this equation.
+
+- Semi-Lagrangian Method
+  ![To find a fluid value at grid point $\vec x_G$ at the new time step, we need to know where the fluid at  was one time step ago, position $\vec x_P$ , following the velocity field.](./images//advection.png)
+  To find a fluid value at grid point $\vec x_G$ at the new time step, we need to know where the fluid at was one time step ago, position $\vec x_P$ , following the velocity field.
+  The first step is figuring out where this imaginary particle would have started from, a position we’ll call $\vec x_P$.
+  $$
+  \vec x_P = \vec x_G - \Delta t \vec u(\vec x_G)
+  $$
+  can get a good approximation by interpolating from $q^n$ at nearby grid points.
+  $$
+  q_G^{n+1} = interpolate(q^n, \vec x_P)
+  $$
+  Get the 2d Velocity:
+  ![Untitled](./images//velocity-interpolation.png)
+  $$
+  ⁍
+  $$
+  General Grid Interpolation:
+  ![Untitled](./images//grid-interpolation.png)
+
+### Projects
+
+- to be continue
+
+### Reference:
+
+- **Robert Bridson** - Fluid Simulation for Computer Graphics
+  - Part I: The Basics
+- **Matthias Müller - Ten Minute Physics**
+  - [https://matthias-research.github.io/pages/tenMinutePhysics/17-fluidSim.pdf](https://matthias-research.github.io/pages/tenMinutePhysics/17-fluidSim.pdf)
