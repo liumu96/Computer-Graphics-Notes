@@ -42,6 +42,13 @@ This is my journey with computer graphics, including related courses, books, tut
 
 ### Physics and Dynamics Simulation
 
+### Fluid Simulation
+
+| Books | 2   | 3   | 4   |
+| ----- | --- | --- | --- |
+
+|
+
 ## Game Engine
 
 ### Unity
