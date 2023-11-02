@@ -2,57 +2,17 @@
 <h5 align="center">Hi, this is my computer graphics journey!</h5>
 This is my journey with computer graphics, including related courses, books, tutorials, articles, blogs, resources, researcher homepages, lab homepages, open source project, website, etc. which I think useful and my own study notes and paper notes. I will record how I start to learn computer graphics! Fighting!
 
-## Fundamentals
+## Courses
 
-| Books/Tutorials/Courses                            | Description                                                                                                                   | Progress |
-| -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | -------- |
-| 《Fundamentals of Computer Graphics, 4th Edition》 | Tiger Book.                                                                                                                   | 60%      |
-| 《Fundamentals of Computer Graphics, 4th Edition》 | Describe both the mathmatical theory behind a modern photorealistic rendering system as well as its practical implementation. | 20%      |
-| Ray Tracing In One Weekend                         | TODO                                                                                                                          | 100%     |
-| Ray Tracing The Next Week                          | TODO                                                                                                                          | 100%     |
-| 《An Introduction to Ray Tracing》                 | TODO                                                                                                                          | 20%      |
+| Title                                                                                                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Assignments                                                         |
+| ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| [GAMES103: Intro to Physics-Based Animation](http://games-cn.org/games103/)                                 | This course introduces fundamental physics-based computer animation techniques across four tracks: rigid body, particle springs, finite element-based elastomer, and fluid simulations.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |                                                                     |
+| [CIS563: Physics-based Animation](https://www.youtube.com/playlist?list=PL_a9tY9IhJuPuw5nu-WU7mG8T8MiX4JnY) | This course introduces students to common physically based simulation techniques for the animation of fluids and gases, rigid and deformable solids, cloth, explosions, fire, smoke, virtual characters, and other systems. Physically based simulation techniques allow for the creation of extremely realistic special effects for movies, video games, and surgical simulation systems. We will learn state-of-the-art techniques that are commonly used in current special effects and animation studios and in the video games community. To gain hands-on experience, students will implement basic simulators for several systems. The topics will include Particle Systems, Mass spring systems, Deformable Solids & Fracture, Cloth, Explosions & Fire, Smoke, Fluids, Deformable active characters, Simulation and control of rigid bodies, Rigid body dynamics, Collision detection and handling, Simulation of articulated characters, Simulated characters in games. |                                                                     |
+| [Physics-Based Animation](https://www.youtube.com/playlist?list=PLTkE7n2CwG_PH09_q0Q7ttjqE2F9yGeM3)         | In Physics-Based Animation we will learn how to develop algorithms that produce visually compelling representations of physical systems. We will learn the underlying continuous mathematics describing the motion of physical objects, explore how to discretize them, and how to solve the resulting discrete equations quickly and robustly.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | [github](https://github.com/dilevin/CSC417-physics-based-animation) |
 
-| Projects                     | Description | Progress |
-| ---------------------------- | ----------- | -------- |
-| Graphic-Workshop             |             | 80%      |
-| Tiny Ray Tracer              |             | 80%      |
-| Ray Tracing In One Weekend   |             | 100%     |
-| Ray Tracing The Next Weekend |             | 100%     |
-| Threejs Ray Tracing          |             | 0%       |
-| Tiny Renderer                |             | 0%       |
-| GLSL-PathTracer              |             | 0%       |
+## Paper Notes
 
-| Math                                                                                                  | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| [Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) | 3Blue1Brown: A free course offering the core concept of linear algebra with a visuals-first approach. |
-| Differential equations                                                                                | 3Blue1Brown                                                                                           |
-
-| Courses                                                          | Description                                                                                                                  |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| TU Wien Rendering                                                |                                                                                                                              |
-| GAMES 101                                                        |                                                                                                                              |
-| Ray Tracing Essentials                                           | NVIDIA                                                                                                                       |
-| [Introduction to Deep Learning](http://introtodeeplearning.com/) | MIT:An efficient and high-intensity bootcamp designed to teach you the fundamentals of deep learning as quickly as possible! |
-
-## Rendering
-
-### Ray Tracing
-
-## Simulation
-
-### Physics and Dynamics Simulation
-
-### Fluid Simulation
-
-| Books | 2   | 3   | 4   |
-| ----- | --- | --- | --- |
-
-|
-
-## Game Engine
-
-### Unity
-
-## Model
-
-### Blender
+| Title                                                                                                                       | Year | Notes                                                      |
+| --------------------------------------------------------------------------------------------------------------------------- | ---- | ---------------------------------------------------------- |
+| [Fast Simulation of Mass-Spring Systems](https://users.cs.utah.edu/~ladislav/liu13fast/liu13fast.html)                      | 2013 | [Note & Code](https://github.com/liumu96/Fast-Mass-Spring) |
+| [Meshless Deformations Based on Shape Matching](https://graphics.stanford.edu/courses/cs468-05-fall/Papers/p471-muller.pdf) | 2005 | [Note](./Physics%20Simulation/ShapeMatching.md)            |
