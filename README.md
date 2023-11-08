@@ -12,7 +12,23 @@ This is my journey with computer graphics, including related courses, books, tut
 
 ## Paper Notes
 
-| Title                                                                                                                       | Year | Notes                                                      |
-| --------------------------------------------------------------------------------------------------------------------------- | ---- | ---------------------------------------------------------- |
-| [Fast Simulation of Mass-Spring Systems](https://users.cs.utah.edu/~ladislav/liu13fast/liu13fast.html)                      | 2013 | [Note & Code](https://github.com/liumu96/Fast-Mass-Spring) |
-| [Meshless Deformations Based on Shape Matching](https://graphics.stanford.edu/courses/cs468-05-fall/Papers/p471-muller.pdf) | 2005 | [Note](./Physics%20Simulation/ShapeMatching.md)            |
+| Title                                                                                                                            | Year | Notes                                                                 |
+| -------------------------------------------------------------------------------------------------------------------------------- | ---- | --------------------------------------------------------------------- |
+| [Fast Simulation of Mass-Spring Systems](https://users.cs.utah.edu/~ladislav/liu13fast/liu13fast.html)                           | 2013 | [Note & Code](https://github.com/liumu96/Fast-Mass-Spring)            |
+| [Meshless Deformations Based on Shape Matching](https://graphics.stanford.edu/courses/cs468-05-fall/Papers/p471-muller.pdf)      | 2005 | [Note](./Physics%20Simulation/ShapeMatching.md)                       |
+| [Particle-Based Fluid Simulation for Interactive Applications](https://matthias-research.github.io/pages/publications/sca03.pdf) | 2003 | [Note](./Physics%20Simulation/Particle-Based%20Fluid%20Simulation.md) |
+| [Physically Based Modeling](https://graphics.stanford.edu/courses/cs448b-00-winter/papers/phys_model.pdf)                        | 2001 | [Particle Dynamics](./Physics%20Simulation/Particle%20Dynamics.md)    |
+
+## Books
+
+| Title                                  | Description |
+| -------------------------------------- | ----------- |
+| Fluid Simulation for Computer Graphics |             |
+|                                        |             |
+
+## C++ Libraries
+
+- imgui: mmediate Mode Graphical User Interface with minimal dependencies.
+- assimp: Open Asset Import Library (assimp) is a cross-platform 3D model import library which aims to provide a common API for different 3D asset file formats.
+- GLFW: A simple, cross-platform OpenGL wrangling library.
+- libigl: Simple C++ geometry processing library.
