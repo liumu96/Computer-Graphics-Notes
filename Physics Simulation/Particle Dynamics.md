@@ -4,7 +4,7 @@ Particles are objects that have mass, position, and velocity, and respond to for
 
 ## Phase Space
 
-The Newton's $2^{nd}$ Law: $\bold f = m\bold a$.
+The Newton's $2^{nd}$ Law: $\bold {f} = m\bold a$.
 
 $$
 \ddot {\bold x} = \frac{\bold f}{m} \\
