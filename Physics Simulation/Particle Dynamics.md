@@ -4,15 +4,15 @@ Particles are objects that have mass, position, and velocity, and respond to for
 
 ## Phase Space
 
-The Newton's $2^{nd}$ Law: $\bold {f} = m\bold a$.
+The Newton's $2^{nd}$ Law: $\mathbf {f} = m\mathbf a$.
 
 $$
-\ddot {\bold x} = \frac{\bold f}{m} \\
+\ddot {\mathbf x} = \frac{\mathbf f}{m} \\
 $$
 
 $$
-\dot {\bold v} = \frac{\bold f}{m} \\
-\dot {\bold x} = \bold v
+\dot {\mathbf v} = \frac{\mathbf f}{m} \\
+\dot {\mathbf x} = \mathbf v
 $$
 
 This position/velocity product space is called phase space.
@@ -119,84 +119,84 @@ Forces can be grouped into three broad categories:
 
 ### Unary Forces
 
-**Gravity**: $\bold f = m\bold g$
+**Gravity**: $\mathbf f = m\mathbf g$
 
-**Viscous Drag**: $\bold f = -k_d \bold v$, where $k_d$ is called the coefficient of drag.
+**Viscous Drag**: $\mathbf f = -k_d \mathbf v$, where $k_d$ is called the coefficient of drag.
 ![Viscous Drag](./images/2-5.png)
 
 ### n-ary forces
 
-The spring forces between a pair of particles at positions $\bold a$ and $\bold b$ are:
+The spring forces between a pair of particles at positions $\mathbf a$ and $\mathbf b$ are:
 
 $$
 \begin{align}
-\bold f_a = -[k_s(|\bold I| - r) + k_d\frac{\bold {\dot I}\cdot \bold I}{|\bold I|}]\frac{\bold I}{|\bold I|}, \bold f_b = -\bold f_a
+\mathbf f_a = -[k_s(|\mathbf I| - r) + k_d\frac{\mathbf {\dot I}\cdot \mathbf I}{|\mathbf I|}]\frac{\mathbf I}{|\mathbf I|}, \mathbf f_b = -\mathbf f_a
 \end{align}
 $$
 
-where $\bold f_a$ and $\bold f_b$ are the forces on $\bold a$ and $\bold b$, respectively, $\bold I = \bold a - \bold b$, $r$ is the rest length, $k_s$ is a spring constant, and $k_d$ is a damping constant. $\bold {\dot I}$, the time derivative of $\bold I$, is just $\bold v_a - \bold v_b$, the difference between the two particles’ velocities.
+where $\mathbf f_a$ and $\mathbf f_b$ are the forces on $\mathbf a$ and $\mathbf b$, respectively, $\mathbf I = \mathbf a - \mathbf b$, $r$ is the rest length, $k_s$ is a spring constant, and $k_d$ is a damping constant. $\mathbf {\dot I}$, the time derivative of $\mathbf I$, is just $\mathbf v_a - \mathbf v_b$, the difference between the two particles’ velocities.
 ![Damped Spring](./images/2-6.png)
 
 ## Energy Functions
 
-Behavior function: $\bold C(\bold x_1,...,\bold x_n) = 0$
+Behavior function: $\mathbf C(\mathbf x_1,...,\mathbf x_n) = 0$
 
 Define a scalar potential energy function:
 
 $$
-E = \frac{k_s}{2}\bold C \cdot \bold C
+E = \frac{k_s}{2}\mathbf C \cdot \mathbf C
 $$
 
-where $k_s$ is a generalized stiffness constant. Since the force due to a scalar potential is minus the energy gradient, the force on particle $x_i$ due to $\bold C$ is:
+where $k_s$ is a generalized stiffness constant. Since the force due to a scalar potential is minus the energy gradient, the force on particle $x_i$ due to $\mathbf C$ is:
 
 $$
-\bold f_i = \frac{-\partial E}{\partial \bold x_i} = -ks \bold C \frac{\partial \bold C}{\partial \bold x_i}
+\mathbf f_i = \frac{-\partial E}{\partial \mathbf x_i} = -ks \mathbf C \frac{\partial \mathbf C}{\partial \mathbf x_i}
 $$
 
 Add damping:
 
 $$
 \begin{align}
-\bold f_i = (-ks \bold C - k_d\dot{\bold C}) \frac{\partial \bold C}{\partial \bold x_i}
+\mathbf f_i = (-ks \mathbf C - k_d\dot{\mathbf C}) \frac{\partial \mathbf C}{\partial \mathbf x_i}
 \end{align}
 $$
 
-where $k_d$ s a generalized damping constant, and $\dot{\bold C}$ is the time derivative of $\bold C$.
+where $k_d$ s a generalized damping constant, and $\dot{\mathbf C}$ is the time derivative of $\mathbf C$.
 
-Take an extremely simple example, $\bold C = \bold x_1 - \bold x_2$,
-
-$$
-\frac{\partial \bold C}{\partial \bold x_1} = \bold I , \frac{\partial \bold C}{\partial \bold x_2} = -\bold I
-$$
-
-where $\bold I$ is the identity matrix. The time derivative is:
+Take an extremely simple example, $\mathbf C = \mathbf x_1 - \mathbf x_2$,
 
 $$
-\dot{\bold C} = \bold v_1 - \bold v_2
+\frac{\partial \mathbf C}{\partial \mathbf x_1} = \mathbf I , \frac{\partial \mathbf C}{\partial \mathbf x_2} = -\mathbf I
+$$
+
+where $\mathbf I$ is the identity matrix. The time derivative is:
+
+$$
+\dot{\mathbf C} = \mathbf v_1 - \mathbf v_2
 $$
 
 So, substituting into equation 2,
 
 $$
-\bold f_1 = -k_s(\bold x_1 - \bold x_2) - k_d(\bold v_1 - \bold v_2),
-\bold f_2 = k_s(\bold x_1 - \bold x_2) + k_d(\bold v_1 - \bold v_2)
+\mathbf f_1 = -k_s(\mathbf x_1 - \mathbf x_2) - k_d(\mathbf v_1 - \mathbf v_2),
+\mathbf f_2 = k_s(\mathbf x_1 - \mathbf x_2) + k_d(\mathbf v_1 - \mathbf v_2)
 $$
 
-Take another example, the behavior function $\bold C = |\bold I| - r$, where $\bold I = \bold x_1 - \bold x_2$.
+Take another example, the behavior function $\mathbf C = |\mathbf I| - r$, where $\mathbf I = \mathbf x_1 - \mathbf x_2$.
 
 $$
-\frac{\partial \bold C}{\partial \bold I} = \frac{\bold I}{|\bold I|}
+\frac{\partial \mathbf C}{\partial \mathbf I} = \frac{\mathbf I}{|\mathbf I|}
 $$
 
 $$
-\frac{\partial \bold C}{\partial \bold x_1} = \frac{\partial \bold C}{\partial \bold I},
-\frac{\partial \bold C}{\partial \bold x_2} = -\frac{\partial \bold C}{\partial \bold I},
+\frac{\partial \mathbf C}{\partial \mathbf x_1} = \frac{\partial \mathbf C}{\partial \mathbf I},
+\frac{\partial \mathbf C}{\partial \mathbf x_2} = -\frac{\partial \mathbf C}{\partial \mathbf I},
 $$
 
 The time derivative of is
 
 $$
-\dot{\bold C} = \frac{\bold I \cdot \bold {\dot I} }{|\bold I|} = \frac{\bold I \cdot (\bold v_1 - \bold v_2) }{|\bold I|}
+\dot{\mathbf C} = \frac{\mathbf I \cdot \mathbf {\dot I} }{|\mathbf I|} = \frac{\mathbf I \cdot (\mathbf v_1 - \mathbf v_2) }{|\mathbf I|}
 $$
 
 ## Particle/Plane Collisions and Contact
@@ -206,7 +206,7 @@ $$
 If **P** is a point on the plane, and **N** is a normal, pointing inside. Test the sign of
 
 $$
-(\bold X - \bold P) \cdot \bold N
+(\mathbf X - \mathbf P) \cdot \mathbf N
 $$
 
 to detect a collision of point **X** with the plane.
@@ -214,12 +214,12 @@ A value greater than zero means it’s inside, less than zero means it’s outsi
 
 ### Response
 
-To describe collision response, we need to partition velocity and force vectors into two orthogonal components, one normal to the collision surface, and the other parallel to it. If **N** is the normal to the collision plane, then the normal component of a vector **x** is $\bold x_n = (\bold N \cdot \bold x)\bold x$, and the tangential component is $\bold x_t = \bold x - \bold x_n$.
+To describe collision response, we need to partition velocity and force vectors into two orthogonal components, one normal to the collision surface, and the other parallel to it. If **N** is the normal to the collision plane, then the normal component of a vector **x** is $\mathbf x_n = (\mathbf N \cdot \mathbf x)\mathbf x$, and the tangential component is $\mathbf x_t = \mathbf x - \mathbf x_n$.
 
 The simplest collision to consider is an elastic collision without friction. Here, the normal component of the particle’s velocity is negated, whereafter the particle goes its merry way. In an inelastic collision, the normal velocity component is instead multiplied by $r$ , where $r$ is a constant between zero and one, called the coefficient of restitution. At $r = 0$, the particle doesn’t bounce at all, and $r = .9$ is a superball.
 
 ### Contact
 
-If a particle is on the collision surface, with zero normal velocity, then it is in contact. If a particle is pushed into the contact plane $(\bold N \cdot \bold f < 0)$ a contact force $\bold f_c = -(\bold N \cdot \bold f)\bold f$ is exerted, exactly canceling the normal component of $f$ .
+If a particle is on the collision surface, with zero normal velocity, then it is in contact. If a particle is pushed into the contact plane $(\mathbf N \cdot \mathbf f < 0)$ a contact force $\mathbf f_c = -(\mathbf N \cdot \mathbf f)\mathbf f$ is exerted, exactly canceling the normal component of $f$ .
 
-In the very simplest linear friction model, the frictional force is $-k_f(-\bold f \cdot \bold N)\bold v_t$ , a drag force that acts in the tangential direction, with magnitude proportional to the normal force. To model a perfectly non-slippery surface, $v_t$ is simply zeroed.
+In the very simplest linear friction model, the frictional force is $-k_f(-\mathbf f \cdot \mathbf N)\mathbf v_t$ , a drag force that acts in the tangential direction, with magnitude proportional to the normal force. To model a perfectly non-slippery surface, $v_t$ is simply zeroed.
