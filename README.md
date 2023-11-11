@@ -12,19 +12,24 @@ This is my journey with computer graphics, including related courses, books, tut
 
 ## Paper Notes
 
-| Title                                                                                                                            | Year | Notes                                                                 |
-| -------------------------------------------------------------------------------------------------------------------------------- | ---- | --------------------------------------------------------------------- |
-| [Fast Simulation of Mass-Spring Systems](https://users.cs.utah.edu/~ladislav/liu13fast/liu13fast.html)                           | 2013 | [Note & Code](https://github.com/liumu96/Fast-Mass-Spring)            |
-| [Meshless Deformations Based on Shape Matching](https://graphics.stanford.edu/courses/cs468-05-fall/Papers/p471-muller.pdf)      | 2005 | [Note](./Physics%20Simulation/ShapeMatching.md)                       |
-| [Particle-Based Fluid Simulation for Interactive Applications](https://matthias-research.github.io/pages/publications/sca03.pdf) | 2003 | [Note](./Physics%20Simulation/Particle-Based%20Fluid%20Simulation.md) |
-| [Physically Based Modeling](https://graphics.stanford.edu/courses/cs448b-00-winter/papers/phys_model.pdf)                        | 2001 | [Particle Dynamics](./Physics%20Simulation/Particle%20Dynamics.md)    |
+| Title                                                                                                                                         | Year | Notes                                                                                                                                                                                                                                          |
+| --------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Fast Simulation of Mass-Spring Systems](https://users.cs.utah.edu/~ladislav/liu13fast/liu13fast.html)                                        | 2013 | [Note & Code](https://github.com/liumu96/Fast-Mass-Spring)                                                                                                                                                                                     |
+| [Meshless Deformations Based on Shape Matching](https://graphics.stanford.edu/courses/cs468-05-fall/Papers/p471-muller.pdf)                   | 2005 | [Note](./Physics%20Simulation/ShapeMatching.md)                                                                                                                                                                                                |
+| [Particle-Based Fluid Simulation for Interactive Applications](https://matthias-research.github.io/pages/publications/sca03.pdf)              | 2003 | [Note](./Physics%20Simulation/Particle-Based%20Fluid%20Simulation.md)                                                                                                                                                                          |
+| [Physically Based Modeling](https://graphics.stanford.edu/courses/cs448b-00-winter/papers/phys_model.pdf)                                     | 2001 | 1. [Particle Dynamics](./Physics%20Simulation/Particle%20Dynamics.md) 2. [Rigid Simulation: Part I](./Physics%20Simulation/Rigid%20Body%20Simulation.md) 3. [Rigid Simulation: Part II](./Physics%20Simulation/Rigid%20Body%20Simulation-2.md) |
+| [FLUID SIMULATION](https://www.cs.ubc.ca/~rbridson/fluidsimulation/fluids_notes.pdf)                                                          | 2007 |                                                                                                                                                                                                                                                |
+| [FEM Simulation of 3D Deformable Solids: Part I](http://viterbi-web.usc.edu/~jbarbic/femdefo/sifakis-courseNotes-TheoryAndDiscretization.pdf) | 2012 |                                                                                                                                                                                                                                                |
+| [FEM Simulation of 3D Deformable Solids: Part II](http://viterbi-web.usc.edu/~jbarbic/femdefo/barbic-courseNotes-modelReduction.pdf)          | 2012 |                                                                                                                                                                                                                                                |
 
 ## Books
 
-| Title                                  | Description |
-| -------------------------------------- | ----------- |
-| Fluid Simulation for Computer Graphics |             |
-|                                        |             |
+| Title                                                                             | Description |
+| --------------------------------------------------------------------------------- | ----------- |
+| Fundamentals of Computer Graphics                                                 |             |
+| Fluid Simulation for Computer Graphics                                            |             |
+| Foundations of Physically Based Modeling and Animation                            |             |
+| [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf) |             |
 
 ## C++ Libraries
 
